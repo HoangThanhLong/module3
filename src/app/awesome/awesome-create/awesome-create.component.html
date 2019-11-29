@@ -1,0 +1,33 @@
+<div class="card">
+  <h5 class="card-header">CREATE AWESOME</h5>
+  <div class="card-body">
+    <form [formGroup]="awesomeCreateFrom" (ngSubmit)='Onsubmit()' class="col-md-6 offset-md-3">
+      <div class="form-group row">
+        <label class="col">Tag:
+          <input type="text" class="form-control" formControlName="tag">
+        </label>
+      </div>
+      <div *ngIf="awesomeCreateFrom.get('tag').invalid && awesomeCreateFrom.get('tag').touched" class="alert alert-danger">
+        Tag is required
+      </div>
+      <div class="form-group row">
+        <label class="col">Url:
+          <input type="text" class="form-control" formControlName="url">
+        </label>
+      </div>
+      <div *ngIf="awesomeCreateFrom.get('url').invalid && awesomeCreateFrom.get('url').touched" class="alert alert-danger">
+        Url is required
+      </div>
+      <div class="form-group row">
+        <label class="col">Descriptions:
+          <input type="text" class="form-control" formControlName="descriptions">
+        </label>
+      </div>
+      <div *ngIf="awesomeCreateFrom.get('descriptions').invalid && awesomeCreateFrom.get('descriptions').touched" class="alert alert-danger">
+        Descriptions is required
+      </div>
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
+      <button type="cancel" class="btn btn-outline-dark" routerLink="">Cancel</button>
+    </form>
+  </div>
+</div>

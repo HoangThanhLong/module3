@@ -1,0 +1,28 @@
+<h1>My Awesome List</h1>
+<button class="btn btn-outline-success" routerLink="create"><i class="fa fa-plus-square"></i> Create</button>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Tag</th>
+    <th scope="col">Url</th>
+    <th scope="col">Description</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let awesome of awesomeList; index as i">
+    <th>{{ i + 1 }}</th>
+    <td>{{ awesome.tag }}</td>
+    <td>{{ awesome.url }}</td>
+    <td>{{ awesome.descriptions}}</td>
+    <td>
+      <button class="btn btn-primary" routerLink="/edit/{{awesome.id}}"><i class="fa fa-pencil"></i></button>
+    </td>
+    <td>
+      <button class="btn btn-danger offset-1" (click)="delete(awesome.id)"><i class="fa fa-trash-o"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>
